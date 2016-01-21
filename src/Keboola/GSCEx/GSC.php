@@ -11,8 +11,6 @@ class GSC
     'client_email',
     'private_key',
     'site_url',
-
-    'download_crawl_errors_counts',
   );
 
   public function __construct($config, $destination)

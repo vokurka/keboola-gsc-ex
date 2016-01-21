@@ -1,31 +1,30 @@
 # Documentation
 
-To use Zuora AQuA Extractor you just need to create the component in your KBC project and set the configuration correctly.
+The Google Search Console Extractor for Keboola Connection Platform now only supports downloading data about URL Crawl Errors. For more features write an e-mail to vokurka@keboola.com.
+
+To use Google Search Console Extractor you just need to create the component in your KBC project and set the configuration correctly. Also, there is some API and credentials setting.
+
+1. You need to enable Google Search Console API here: https://console.developers.google.com/apis/library
+2. You need to create new credentials here: https://console.developers.google.com/apis/credentials - go to New credentials > Server Key > As a Key type choose JSON > Create. A JSON file will be downloaded to your computer - open it in text editor, it contains all the info you need for logging in.
+3. You need to add permissions for newly created Service Account in Google Search Console - add the client_email from JSON file as a new user to your Google Search Console.
+4. Profit.
 
 Here is an example of configuration:
 
 ```
 {
-  "bucket": "in.c-ex-zuora-main",
-
-  "username": "<your_username>",
-  "#password": "<your_password>",
-
-  "start_date": "-1 month",
-  "end_date": "today",
-
-  "queries": {
-    "report1": "select AccountNumber from account where CreatedDate >= {start_date} and CreatedDate <= {end_date}",
-    "report2": "select AccountNumber from account where CreatedDate >= {start_date} and CreatedDate <= {end_date}"
-  }
+	"bucket": "in.c-ex-gsc-main",
+    "client_id": "<your_client_id_here>",
+    "client_email": "<your_client_email_here>"
+    "private_key": "<your_private_key_here>"
+    "site_url": "<your_site_url_here>"
 }
 ```
 
 * bucket - destination bucket for downloaded data
-* username - username of account you are using to access Zuora
-* password - password of account you are using to access Zuora
-* start_date - placeholder for use in queries so you do not have to type the date again in every query
-* end_date - placeholder for use in queries so you do not have to type the date again in every query
-* queries - a list of queries and their names - the resulting data table in KBC will have the same name as query here
+* client_id - username of account you are using to access Zuora
+* client_email - password of account you are using to access Zuora
+* private_key - placeholder for use in queries so you do not have to type the date again in every query
+* site_url - placeholder for use in queries so you do not have to type the date again in every query
 
-Warning: Zuora AQuA is implemented in stateless mode. So you have to have in mind order of the queries. For more informations look [here](https://knowledgecenter.zuora.com/BC_Developers/Aggregate_Query_API/BA_Stateless_and_Stateful_Modes).
+Now you are ready to go!
