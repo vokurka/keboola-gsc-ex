@@ -1,6 +1,6 @@
 # Documentation
 
-The Google Search Console Extractor for Keboola Connection Platform now only supports downloading data about URL Crawl Errors. For more features write an e-mail to vokurka@keboola.com.
+The Google Search Console Extractor for Keboola Connection Platform now only supports downloading data about URL Crawl Errors. For more features write an e-mail to kurka.vojtech@gmail.com.
 
 To use Google Search Console Extractor you just need to create the component in your KBC project and set the configuration correctly. Also, there is some API and credentials setting.
 
