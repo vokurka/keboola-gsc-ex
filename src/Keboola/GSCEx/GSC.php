@@ -6,7 +6,7 @@ class GSC
   private $config;
   private $destination;
   private $mandatoryConfigColumns = array(
-    'bucket', 
+    //'bucket', 
     'client_id', 
     'client_email',
     '#private_key',
@@ -44,7 +44,7 @@ class GSC
       "type" => "service_account",
       "client_id" => $this->config['client_id'],
       "client_email" => $this->config['client_email'],
-      "private_key" => $this->config['private_key'],
+      "private_key" => $this->config['#private_key'],
       "signing_algorithm" => "HS256",
     ));
 
