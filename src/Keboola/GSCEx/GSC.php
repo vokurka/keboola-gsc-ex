@@ -9,7 +9,7 @@ class GSC
     'bucket', 
     'client_id', 
     'client_email',
-    'private_key',
+    '#private_key',
     'site_url',
   );
 
@@ -60,7 +60,8 @@ class GSC
   {
     $result = $service->urlcrawlerrorscounts->query($this->config['site_url'], array('latestCountsOnly' => false));
 
-    $file = fopen($this->destination.$this->config['bucket']."urlcrawlerrorscounts","w");
+    //$file = fopen($this->destination.$this->config['bucket']."urlcrawlerrorscounts","w");
+    $file = fopen($this->destination."urlcrawlerrorscounts","w");
     if ($file === false)
     {
       throw new Exception("Could not open local file for writing.");
