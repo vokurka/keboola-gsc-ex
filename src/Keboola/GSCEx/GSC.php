@@ -60,12 +60,13 @@ class GSC
   {
     $result = $service->urlcrawlerrorscounts->query($this->config['site_url'], array('latestCountsOnly' => false));
 
-    //$file = fopen($this->destination.$this->config['bucket']."urlcrawlerrorscounts","w");
     $file = fopen($this->destination."urlcrawlerrorscounts","w");
     if ($file === false)
     {
       throw new Exception("Could not open local file for writing.");
     }
+
+    fputcsv($file, array('type','category','date','error_count'));
 
     foreach ($result["countPerTypes"] as $row)
     {
