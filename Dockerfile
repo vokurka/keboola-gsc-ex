@@ -2,7 +2,7 @@ FROM keboola/base-php56
 
 MAINTAINER Vojtech Kurka <vokurka@keboola.com>
 
-ENV APP_VERSION 1.2.0
+ENV APP_VERSION 1.2.1
 
 WORKDIR /home
 
